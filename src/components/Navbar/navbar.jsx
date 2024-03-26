@@ -1,19 +1,22 @@
 import './navbar.css';
 
-function Navbar() {
+export function Navbar() {
     return (
         <nav id="navbar">
+            <a href="/">
+                <h3 id="logo">R<sup>3</sup></h3>
+            </a>
             <ul>
-                <li className='links'>Home</li>
-                <li className='links'>About</li>
-                <li className='links'>Course Modules</li>
+                <div className="general-links">
+                    <a href="#"><li className='links'>Home</li></a>
+                    <a href="#"><li className='links'>About</li></a>
+                    <a href="#"><li className='links'>Course Modules</li></a>
+                </div>
                 <div className='sign-up-links'>
-                    <li className='links'>Sign Up</li>
-                    <li className='links'>Sign In</li>
+                    <a href="#"><li className='links'>Sign Up</li></a>
+                    <a href="#"><li className='links'>Sign In</li></a>
                 </div>
             </ul>
         </nav>
     )
 }
-
-export default Navbar;

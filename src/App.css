@@ -1,42 +1,126 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  height: 100%;
+  width: 100%;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+#homepage #typewriter::before {
+  content: 'Reduce';
+  color: var(--accent);
+  animation: typed 5s infinite alternate steps(1);
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+@keyframes typed {
+  4% {
+    content: "Reduce";
   }
-  to {
-    transform: rotate(360deg);
+
+  8% {
+    content: "Reduc"
+  }
+
+  12% {
+    content: "Redu"
+  }
+
+  16% {
+    content: "Red"
+  }
+
+  20% {
+    content: "Re"
+  }
+
+  24% {
+    content: "R"
+  }
+
+  28% {
+    content: ""
+  }
+
+  32% {
+    content: "R";
+  }
+
+  36% {
+    content: "Re";
+  }
+
+  40% {
+    content: "Reu";
+  }
+
+  44% {
+    content: "Reus";
+  }
+
+  48% {
+    content: "Reuse";
+  }
+
+  52% {
+    content: "Reus";
+  }
+
+  56% {
+    content: "Reu";
+  }
+
+  60% {
+    content: "Re";
+  }
+
+  64% {
+    content: "R";
+  }
+
+  68% {
+    content: "";
+  }
+
+  72% {
+    content: "R";
+  }
+
+  76% {
+    content: "Re";
+  }
+
+  80% {
+    content: "Rec";
+  }
+
+  84% {
+    content: "Recy";
+  }
+
+  88% {
+    content: "Recyc";
+  }
+
+  92% {
+    content: "Recycl";
+  }
+
+  96% {
+    content: "Recycle";
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+#homepage {
+  display: flex;
+  padding: 10%;
+  gap: 6.5%;
 }
 
-.card {
-  padding: 2em;
+#homepage h1 {
+  padding: 0;
+  margin: 0;
 }
 
-.read-the-docs {
-  color: #888;
+#homepage-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2%;
+  align-items: flex-start;
 }
