@@ -1,6 +1,7 @@
 import './root.css';
 import { Scenery } from '../components/Scenery/scenery'
 import { Navbar } from '../components/Navbar/navbar';
+import { Link } from 'react-router-dom';
 
 function Homepage() {
   return (
@@ -9,7 +10,7 @@ function Homepage() {
         <h1>Learn Waste Segregation:<br></br><span  id="typewriter">|</span></h1>
         <h5>Welcome to <span className='accent'>R<sup>3</sup></span>, where we teach you about the importance of <strong>Waste Segregation!</strong></h5>
         <span>
-          <button>Start Learning Today!</button>
+          <Link to='/sign-up'><button>Start Learning Today!</button></Link>
         </span>
       </div>
       <Scenery />

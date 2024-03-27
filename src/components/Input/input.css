@@ -1,0 +1,50 @@
+#input-container {
+    border-radius: 500px;
+    padding: 0.5rem 2rem;
+    min-width: 25vw;
+    border: 1.5px solid var(--text);
+    transition: border 0.4s ease-in-out;
+    position: relative;
+}
+
+#input-container legend {
+    margin: 0;
+    padding: 0 0.6rem;
+    transition: color 0.4s ease-in-out;
+}
+
+#input-container input {
+    height: 100%;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    margin: 0;
+    position: relative;
+    bottom: 0.35rem;
+    left: 0.3rem;
+    font-size: 1rem;
+    color: var(--text);
+}
+
+#input-container input:focus {
+    border: none;
+    outline: none;
+}
+
+#input-container:has(input:focus) {
+    border-color: var(--accent);
+    border-width: 2px;
+}
+
+#input-container:has(input:focus) legend {
+    color: var(--accent);
+}
+
+#input-error-message {
+    color: red;
+    position: absolute;
+    right: 2rem;
+    top: -2.3rem;
+    font-size: 0.8rem;
+}
+

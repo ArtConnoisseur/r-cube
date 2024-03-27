@@ -1,0 +1,11 @@
+#error-contianer {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    bottom: 50px;
+    text-align: center;
+}
