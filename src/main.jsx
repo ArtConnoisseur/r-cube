@@ -9,6 +9,7 @@ import {
 import { Root } from './routes/root';
 import { ErrorPage } from './routes/error-page/error-page'
 import { SignUp } from "./routes/sign-up/sign-up";
+import { SignIn } from './routes/sign-in/sign-in';
 import "./index.css";
 
 const router = createBrowserRouter([
@@ -22,7 +23,11 @@ const router = createBrowserRouter([
     element: <SignUp />,
     errorElement: <ErrorPage />,
   },
-  
+  {
+    path: '/sign-in',
+    element: <SignIn />,
+    errorElement: <ErrorPage />
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(

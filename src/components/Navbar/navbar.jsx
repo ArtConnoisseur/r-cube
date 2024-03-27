@@ -14,8 +14,8 @@ export function Navbar() {
                     <a href="#"><li className='links'>Course Modules</li></a>
                 </div>
                 <div className='sign-up-links'>
-                    <a href="#"><li className='links'>Sign Up</li></a>
-                    <a href="#"><li className='links'>Sign In</li></a>
+                    <Link to="/sign-up"><li className='links'>Sign Up</li></Link>
+                    <Link to="/sign-in"><li className='links'>Sign In</li></Link>
                 </div>
             </ul>
         </nav>

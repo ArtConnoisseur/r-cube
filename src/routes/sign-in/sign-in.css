@@ -1,0 +1,30 @@
+#sign-up-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#sign-up-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+    align-items: center;
+    border: 1px solid var(--text);
+    padding: 5rem 8rem;
+    border-radius: 3rem;
+    background-color: white;
+}
+
+#sign-up-container form button {
+    width: 40%;
+    margin-top: 2rem;
+}
+
+#sup-scenery {
+    position: absolute;
+    bottom: -5rem;
+    opacity: 0.8;
+    z-index: -1;
+}
