@@ -2,7 +2,7 @@
 
 :root {
     --text: #4D4D4D;
-    --accent: #8AD226;
+    --accent: #78ba1a;
 
     color: var(--text);
 }
@@ -48,17 +48,18 @@ a:hover {
 button {
     background-color: var(--accent);
     border: 1px solid transparent;
-    color: var(--text);
+    color: white;
     font-weight: 600;
     font-size: 1.2rem;
     border-radius: 200px;
     padding: 0.8rem 1.5rem;
-    transition: background-color 0.2s ease-in-out, border 0.2s ease-in-out;
+    transition: background-color 0.2s ease-in-out, border 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 
 button:hover {
-    border: 1px solid var(--text);
+    border: 1px solid var(--accent);
     background-color: transparent;
+    color: var(--accent);
 }
 
 .accent {

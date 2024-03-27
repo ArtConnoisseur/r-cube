@@ -93,7 +93,7 @@ export function Scenery() {
       <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_18_79"/>
       <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
       <feOffset dx="-20" dy="20"/>
-      <feGaussianBlur stdDeviation="10"/>
+      <feGaussianBlur stdDeviation="10"/>``
       <feComposite in2="hardAlpha" operator="out"/>
       <feColorMatrix type="matrix" values="0 0 0 0 0.337255 0 0 0 0 0.572549 0 0 0 0 0.168627 0 0 0 1 0"/>
       <feBlend mode="normal" in2="effect1_dropShadow_18_79" result="effect2_dropShadow_18_79"/>

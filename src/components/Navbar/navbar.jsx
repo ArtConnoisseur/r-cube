@@ -8,7 +8,7 @@ export function Navbar() {
             </a>
             <ul>
                 <div className="general-links">
-                    <a href="#"><li className='links'>Home</li></a>
+                    <a href="../../sign-up/sign-up.html"><li className='links'>Home</li></a>
                     <a href="#"><li className='links'>About</li></a>
                     <a href="#"><li className='links'>Course Modules</li></a>
                 </div>
