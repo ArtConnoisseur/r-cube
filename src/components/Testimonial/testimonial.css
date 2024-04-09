@@ -1,0 +1,56 @@
+.testimonials {
+    display: grid;
+    grid-template-columns: repeat(6, 12rem);
+    grid-template-rows: repeat(7, 12rem);
+    padding: 10rem 5rem;
+    gap: 2rem
+}
+
+.testimonial-container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border: 1px solid var(--text);
+    grid-column: span 2;
+    grid-row: span 1;
+    overflow: hidden;
+    aspect-ratio: 1;
+    transform: rotate(45deg) scale(0.707);
+    border-radius: 20px;
+    transition: transform 0.3s ease-in-out, border 0.2s ease-in-out;
+    background-color: white;
+    position: relative;
+    z-index: 0;
+}
+
+.testimonial-container:hover {
+    border: 3px solid var(--accent);
+    transform: scale(0.9);
+    z-index: 1;
+}
+
+.testimonial-container:hover .content {
+    transform: rotate(0deg);
+}
+
+
+.testimonial-container:nth-of-type(4n+1) {
+    grid-column: 2 / span 2;
+}
+
+.testimonial-container:nth-of-type(4) {
+    grid-column: 2 / span 2;
+} 
+
+.testimonial-container:nth-of-type(1) {
+    grid-column: span 2;
+} 
+
+.testimonial-container:nth-of-type(5) {
+    grid-column: span 2;
+} 
+
+.testimonial-container .content {
+    transform: rotate(-45deg);
+    transition: transform 0.3s ease-in-out;
+}

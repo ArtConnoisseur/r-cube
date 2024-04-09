@@ -1,7 +1,10 @@
 import './root.css';
 import { Scenery } from '../components/Scenery/scenery'
 import { Navbar } from '../components/Navbar/navbar';
+import { Testimonials } from '../components/Testimonial/testimonial';
+
 import { Link } from 'react-router-dom';
+
 
 function Homepage() {
   return (
@@ -37,10 +40,63 @@ function WhyTho() {
 
 export function Root() {
   return (
-    <>
+    <div id='homepage-container'>
       <Navbar />
       <Homepage />
       <WhyTho />
-    </>
+      <Testimonials 
+      testimonials={[
+        {
+          name: 'John Doe',
+          content: 'This course was absolutely amazing! Loved every bit of it! Well written and well paced!',
+          date: '19-05-24'
+        },
+        {
+          name: 'John Doe',
+          content: 'This course was absolutely amazing! Loved every bit of it! Well written and well paced!',
+          date: '19-05-24'
+        },
+        {
+          name: 'John Doe',
+          content: 'This course was absolutely amazing! Loved every bit of it! Well written and well paced!',
+          date: '19-05-24'
+        },
+        {
+          name: 'John Doe',
+          content: 'This course was absolutely amazing! Loved every bit of it! Well written and well paced!',
+          date: '19-05-24'
+        },
+        {
+          name: 'John Doe',
+          content: 'This course was absolutely amazing! Loved every bit of it! Well written and well paced!',
+          date: '19-05-24'
+        },
+        {
+          name: 'John Doe',
+          content: 'This course was absolutely amazing! Loved every bit of it! Well written and well paced!',
+          date: '19-05-24'
+        },
+        {
+          name: 'John Doe',
+          content: 'This course was absolutely amazing! Loved every bit of it! Well written and well paced!',
+          date: '19-05-24'
+        },
+        {
+          name: 'John Doe',
+          content: 'This course was absolutely amazing! Loved every bit of it! Well written and well paced!',
+          date: '19-05-24'
+        },
+        {
+          name: 'John Doe',
+          content: 'This course was absolutely amazing! Loved every bit of it! Well written and well paced!',
+          date: '19-05-24'
+        },
+        {
+          name: 'John Doe',
+          content: 'This course was absolutely amazing! Loved every bit of it! Well written and well paced!',
+          date: '19-05-24'
+        },
+      ]}/>
+    </div>
   )
 }
