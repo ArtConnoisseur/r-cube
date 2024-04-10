@@ -154,3 +154,25 @@
 
   opacity: 0.3;
 }
+
+.final-cta {
+  background-color: var(--accent);
+  padding: 2rem 5rem;
+  border-radius: 20px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  margin: 0;
+}
+
+.final-cta button {
+  background-color: white;
+  color: var(--text);
+}
+
+.final-cta button:hover {
+  background-color: white;
+  color: var(--accent);
+}

@@ -27,8 +27,11 @@ export function Testimonials({ testimonials }) {
     })
 
     return (
-        <div className='testimonials'>
-            {testElements}
+        <div id="testimonials-container">
+            <h2>Don't take our word for it,<br />hear from past students!</h2>
+            <div className='testimonials'>
+                {testElements}
+            </div>
         </div>
     )
 }

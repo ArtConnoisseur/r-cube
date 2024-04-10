@@ -2,6 +2,7 @@ import './root.css';
 import { Scenery } from '../components/Scenery/scenery'
 import { Navbar } from '../components/Navbar/navbar';
 import { Testimonials } from '../components/Testimonial/testimonial';
+import { Footer } from '../components/Footer/footer'
 
 import { Link } from 'react-router-dom';
 
@@ -34,6 +35,18 @@ function WhyTho() {
       <p>Remember, every little bit counts. By segregating your waste, you contribute to a healthier planet, a more sustainable future, and inspire others to do the same. Lets create a ripple effect of positive change, one bin at a time!</p>
 
       <Link to='/sign-up'><button>Start Learning Today!</button></Link>
+    </div>
+  )
+}
+
+function FinalCallToAction() {
+  return (
+    <div className='final-cta'>
+      <div>
+        <h5>Final Call, Sign up now and start learning!</h5>
+        This is your chance now to make a difference in the world!
+      </div>
+      <button>Sign up, NOW!</button>
     </div>
   )
 }
@@ -97,6 +110,8 @@ export function Root() {
           date: '19-05-24'
         },
       ]}/>
+      <FinalCallToAction />
+      < Footer />
     </div>
   )
 }
