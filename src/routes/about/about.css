@@ -1,0 +1,59 @@
+#about-page-contianer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5rem;
+}
+
+#about-us-intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#about-us-intro button {
+    margin-top: 2rem;
+    align-self: flex-start;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+#about-us-hero {
+    display: flex;
+    padding: 0 7%;
+    gap: 4rem;
+}
+
+#why-learn {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    padding: 7% 20% 12% 20%;
+    background-color: var(--accent);
+    color: white;
+}
+
+#why-learn ul {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    list-style: decimal;
+}
+
+#why-learn ul::first-line {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    list-style: decimal;
+}
+
+#about-testimonial-contianer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 7% 20% 16% 20%;
+    background-image: url(https://images.unsplash.com/photo-1615051179134-62696ea77ef9?q=80&w=2976&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+    object-fit: contain;
+}

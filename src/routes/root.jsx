@@ -1,13 +1,11 @@
 import './root.css';
-import { Scenery } from '../components/Scenery/scenery'
 import { Navbar } from '../components/Navbar/navbar';
 import { Testimonials } from '../components/Testimonial/testimonial';
 import { Footer } from '../components/Footer/footer'
-
 import { Link } from 'react-router-dom';
+import { ImageText } from '../components/ImageText/imageText';
 
-
-function Homepage() {
+function Hero() {
   return (
     <div id="homepage">
       <div id="homepage-text">
@@ -17,27 +15,17 @@ function Homepage() {
           <Link to='/sign-up'><button>Start Learning Today!</button></Link>
         </span>
       </div>
-      <Scenery />
+      <div>
+        <ImageText imageAddress={'https://images.unsplash.com/photo-1475113548554-5a36f1f523d6?q=80&w=2931&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'} 
+        className='hero-image'
+        topText={'Save the planet!'}
+        lowerText={'See what you can do?'}
+        />
+      </div>
     </div>
   )
 }
 
-function WhyTho() {
-  return(
-    <div id="why-tho">
-      <h2>Why Should I Learn About <span className='accent'>Waste Segregation?</span></h2>
-      <p>Landfills overflowing, pollution on the rise – the state of our planet demands action. While the problems seem daunting, individual steps can make a big difference. Enter waste segregation, the practice of separating waste for proper disposal and recycling. Its a small action with a powerful impact.</p>
-
-      <p>Think of unsorted waste: landfills overflow, methane gas (a potent greenhouse gas) is emitted, and hazardous materials contaminate our environment. Yikes! Segregation tackles these issues head-on.</p>
-
-      <p>Ready to join the movement? Learning about segregation is simple. Many municipalities and waste management companies offer resources on sorting guidelines and collection procedures. Start by familiarizing yourself with your local waste categories and invest in separate bins.</p>
-
-      <p>Remember, every little bit counts. By segregating your waste, you contribute to a healthier planet, a more sustainable future, and inspire others to do the same. Lets create a ripple effect of positive change, one bin at a time!</p>
-
-      <Link to='/sign-up'><button>Start Learning Today!</button></Link>
-    </div>
-  )
-}
 
 function FinalCallToAction() {
   return (
@@ -51,67 +39,43 @@ function FinalCallToAction() {
   )
 }
 
+const testimonials = [
+        {
+          name: 'John Doe',
+          content: 'This course was absolutely amazing! Loved every bit of it! Well written and well paced!',
+          date: '19-05-24'
+        },
+        {
+          name: 'John Doe',
+          content: 'This course was absolutely amazing! Loved every bit of it! Well written and well paced!',
+          date: '19-05-24'
+        },
+        {
+          name: 'John Doe',
+          content: 'This course was absolutely amazing! Loved every bit of it! Well written and well paced!',
+          date: '19-05-24'
+        },
+        {
+          name: 'John Doe',
+          content: 'This course was absolutely amazing! Loved every bit of it! Well written and well paced!',
+          date: '19-05-24'
+        },
+        {
+          name: 'John Doe',
+          content: 'This course was absolutely amazing! Loved every bit of it! Well written and well paced!',
+          date: '19-05-24'
+        }
+      ]
+
 export function Root() {
   return (
     <div id='homepage-container'>
       <Navbar />
-      <Homepage />
-      <WhyTho />
+      <Hero />
       <Testimonials 
-      testimonials={[
-        {
-          name: 'John Doe',
-          content: 'This course was absolutely amazing! Loved every bit of it! Well written and well paced!',
-          date: '19-05-24'
-        },
-        {
-          name: 'John Doe',
-          content: 'This course was absolutely amazing! Loved every bit of it! Well written and well paced!',
-          date: '19-05-24'
-        },
-        {
-          name: 'John Doe',
-          content: 'This course was absolutely amazing! Loved every bit of it! Well written and well paced!',
-          date: '19-05-24'
-        },
-        {
-          name: 'John Doe',
-          content: 'This course was absolutely amazing! Loved every bit of it! Well written and well paced!',
-          date: '19-05-24'
-        },
-        {
-          name: 'John Doe',
-          content: 'This course was absolutely amazing! Loved every bit of it! Well written and well paced!',
-          date: '19-05-24'
-        },
-        {
-          name: 'John Doe',
-          content: 'This course was absolutely amazing! Loved every bit of it! Well written and well paced!',
-          date: '19-05-24'
-        },
-        {
-          name: 'John Doe',
-          content: 'This course was absolutely amazing! Loved every bit of it! Well written and well paced!',
-          date: '19-05-24'
-        },
-        {
-          name: 'John Doe',
-          content: 'This course was absolutely amazing! Loved every bit of it! Well written and well paced!',
-          date: '19-05-24'
-        },
-        {
-          name: 'John Doe',
-          content: 'This course was absolutely amazing! Loved every bit of it! Well written and well paced!',
-          date: '19-05-24'
-        },
-        {
-          name: 'John Doe',
-          content: 'This course was absolutely amazing! Loved every bit of it! Well written and well paced!',
-          date: '19-05-24'
-        },
-      ]}/>
+      testimonials={testimonials}/>
       <FinalCallToAction />
-      < Footer />
+      <Footer />
     </div>
   )
 }

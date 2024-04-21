@@ -1,0 +1,124 @@
+.about-card-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.card {
+    height: 100%;
+    width: 100%;
+    border-radius: 30px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    border: 3px solid transparent;
+    transition: border 0.2s ease-in-out;
+}
+
+.card:hover {
+    border: 3px solid var(--accent);
+}
+
+.card::before{
+    content: '';
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transform: translateY(-50%);
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.card::after {
+    content: '';
+    transform: translateY(50%);
+    opacity: 0;
+    position: absolute;
+    bottom: 3rem;
+    left: 2rem;
+    color: #fff;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out, text-decoration 0.5s ease-in-out;
+    font-size: 1.5rem;
+}
+
+.card:hover::before {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.card img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.importance {
+
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+.importance:hover::after {
+    content: 'Why learn Waste Management?\A→';
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.testimonial {
+
+    grid-area: 2 / 1 / 3 / 2;
+
+}
+
+.testimonial:hover::after {
+    content: 'See Testimonials!\A→';
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.course-content {
+
+    grid-area: 1 / 2 / 3 / 3;
+}
+
+.course-content:hover::after {
+    content: 'Explore our course!\A→';
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.climate-crisis {
+
+    grid-area: 1 / 3 / 2 / 5;
+}
+
+.climate-crisis:hover::after {
+    content: 'Climate change is real! Learn more\A→';
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.free {
+
+    grid-area: 2 / 3 / 3 / 4;
+}
+
+.free:hover::after {
+    content: 'Our Course is FREE! Learn more\A→';
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.sponsors {
+
+    grid-area: 2 / 4 / 3 / 5;
+}
+
+.sponsors:hover::after {
+    content: 'Check out our awesome sponsors!\A→';
+    transform: translateY(0);
+    opacity: 1;
+}

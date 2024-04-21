@@ -115,9 +115,11 @@
 
 #homepage {
   display: flex;
-  padding: 10%;
+  padding: 5% 10% 0 10%;
   gap: 6.5%;
   position: relative;
+  height: 100vh;
+  justify-content: center;
 }
 
 #homepage h1 {
@@ -175,4 +177,10 @@
 .final-cta button:hover {
   background-color: white;
   color: var(--accent);
+}
+
+.hero-image {
+  overflow: hidden;
+  height: 70vh;
+  width: 700px;
 }
