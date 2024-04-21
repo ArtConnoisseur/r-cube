@@ -4,6 +4,7 @@
     align-items: center;
     height: 100vh;
     overflow: hidden;
+    background-image: url('https://i.pinimg.com/564x/2d/7f/18/2d7f18bbbc88e67f1d140498d4a0863b.jpg');
 }
 
 #sign-up-container form {
@@ -14,7 +15,8 @@
     border: 1px solid var(--text);
     padding: 5rem 8rem;
     border-radius: 3rem;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.657);
+    backdrop-filter: blur(30px);
 }
 
 #sign-up-container form button {

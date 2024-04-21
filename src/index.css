@@ -64,3 +64,12 @@ button:hover {
 .accent {
     color: var(--accent);
 }
+
+.to-top {
+    font-size: 2rem;
+    position: fixed;
+    bottom: 3rem;
+    right: 3rem;
+    color: black;
+    z-index: 4;
+}

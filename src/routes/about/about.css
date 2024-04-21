@@ -31,29 +31,97 @@
     flex-direction: column;
     gap: 3rem;
     padding: 7% 20% 12% 20%;
-    background-color: var(--accent);
     color: white;
+    position: relative;
 }
 
-#why-learn ul {
+.why-info-container {
+    background-color: var(--accent);
+    padding: 3rem 5rem 5rem 5rem;
+    border-radius: 30px;
+    display: flex;
+    gap: 3rem;
+    align-items: first baseline;
+    font-size: 1.2rem;
+}
+
+#why-learn > * > ul {
     display: flex;
     flex-direction: column;
     gap: 3rem;
     list-style: decimal;
 }
 
-#why-learn ul::first-line {
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
-    list-style: decimal;
+#why-learn > * > ul > li::first-line {
+    font-weight: 700;
 }
 
 #about-testimonial-contianer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 7% 20% 16% 20%;
+    padding: 7% 9.1% 16% 9.1%;
     background-image: url(https://images.unsplash.com/photo-1615051179134-62696ea77ef9?q=80&w=2976&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
     object-fit: contain;
+}
+
+#about-image-links {
+    display: flex;
+    gap: 3rem;
+}
+
+#about-image-links > * {
+    transition: width 1s ease;
+    max-height: 500px;
+    min-height: 500px;
+    width: 100%;
+    flex: 1 1 auto;
+}
+
+#about-image-links > *:hover {
+    flex: 2 1 auto;
+    width: 200%;
+}
+
+#about-navbar {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: white;
+}
+
+.vector-bg {
+    transform: rotate(3deg);
+    stroke: var(--accent);
+    z-index: -1;
+    animation: stroke 20s ease-in-out infinite alternate;
+    width: 100vw;
+    stroke-width: 20px;
+    scale: 1.4;
+}
+
+@keyframes stroke {
+    0% {
+        stroke-dashoffset: 0;
+        stroke-dasharray: 0;
+    }
+
+    50% {
+        stroke-dashoffset: 50px;
+        stroke-dasharray: 25;
+    }
+
+    100% {
+        stroke-dashoffset: 0;
+        stroke-dasharray: 0;
+    }
+}
+
+.vector-container {
+    overflow: hidden;
+    width: 100%;
+    position: absolute;
+    top: 25%;
+    left: 0;
+    z-index: -1;
 }

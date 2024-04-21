@@ -1,9 +1,10 @@
 import './root.css';
 import { Navbar } from '../components/Navbar/navbar';
-import { Testimonials } from '../components/Testimonial/testimonial';
 import { Footer } from '../components/Footer/footer'
 import { Link } from 'react-router-dom';
 import { ImageText } from '../components/ImageText/imageText';
+import { ToTop } from '../components/ToTop/to-top';
+import { SponsorMarquee } from '../components/SponsorMarquee/sponsor-marquee';
 
 function Hero() {
   return (
@@ -27,54 +28,14 @@ function Hero() {
 }
 
 
-function FinalCallToAction() {
-  return (
-    <div className='final-cta'>
-      <div>
-        <h5>Final Call, Sign up now and start learning!</h5>
-        This is your chance now to make a difference in the world!
-      </div>
-      <button>Sign up, NOW!</button>
-    </div>
-  )
-}
-
-const testimonials = [
-        {
-          name: 'John Doe',
-          content: 'This course was absolutely amazing! Loved every bit of it! Well written and well paced!',
-          date: '19-05-24'
-        },
-        {
-          name: 'John Doe',
-          content: 'This course was absolutely amazing! Loved every bit of it! Well written and well paced!',
-          date: '19-05-24'
-        },
-        {
-          name: 'John Doe',
-          content: 'This course was absolutely amazing! Loved every bit of it! Well written and well paced!',
-          date: '19-05-24'
-        },
-        {
-          name: 'John Doe',
-          content: 'This course was absolutely amazing! Loved every bit of it! Well written and well paced!',
-          date: '19-05-24'
-        },
-        {
-          name: 'John Doe',
-          content: 'This course was absolutely amazing! Loved every bit of it! Well written and well paced!',
-          date: '19-05-24'
-        }
-      ]
 
 export function Root() {
   return (
     <div id='homepage-container'>
+      <ToTop />
       <Navbar />
       <Hero />
-      <Testimonials 
-      testimonials={testimonials}/>
-      <FinalCallToAction />
+      <SponsorMarquee />
       <Footer />
     </div>
   )

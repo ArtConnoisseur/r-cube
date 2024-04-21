@@ -1,0 +1,51 @@
+.sponsor-marquee {
+    display: flex;
+    overflow: hidden;
+    width: 82.7%;
+    gap: 5rem;
+    mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+}
+
+.sponsor-logos {
+    display: flex;
+    gap: 2rem;
+    animation: infinite-scroll 10s linear infinite;
+}
+
+.sponsor-logo {
+    height: 5rem;
+    aspect-ratio: 1;
+    background-color: rgba(226, 233, 243, 0.343);
+    padding: 3rem;
+    color: rgb(110, 124, 136);
+    border-radius: 30px;
+    border: 1px dashed rgb(110, 124, 136);
+    transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+}
+
+.sponsor-logo:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+}
+
+.sponsor-logo > i {
+    font-size: 5rem;
+}
+
+@keyframes infinite-scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-105.5%);
+    }
+}
+
+#sponsors {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    align-items: center;
+}
