@@ -23,11 +23,16 @@
     box-shadow: 10px 10px 15px 0 rgba(36, 35, 50, 0.223);
 }
 
+root[data-theme='dark'] .testimonial-container {
+    background-color: rgba(0, 0, 0, 0.672);
+    box-shadow: none;
+}
+
 .testimonial-container:hover {
     border: 3px solid var(--accent);
     transform: scale(0.9);
     z-index: 1;
-    background-color: white;
+    background-color: var(--background);
 }
 
 .testimonial-container:hover .content {

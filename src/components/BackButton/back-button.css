@@ -1,0 +1,20 @@
+.back-button {
+    position: fixed;
+    top: 3rem; 
+    left: 3rem;
+    font-size: 2rem;
+}
+
+.back-button::after {
+    content: 'Back';
+    font-size: 1.3rem;
+    position: relative;
+    bottom: 0.3rem;
+    left: 1rem;
+    transition: opacity 0.4s linear;
+    opacity: 0;
+}
+
+.back-button:hover::after {
+    opacity: 1;
+}

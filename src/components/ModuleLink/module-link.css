@@ -1,0 +1,22 @@
+.module-container {
+    width: 80;
+    display: flex;
+    align-items: baseline;
+    gap: 4rem;
+    justify-content: space-evenly;
+    padding: 1rem 2rem;
+    border-radius: 30px;
+    border: 1px solid var(--text);
+    background-color: var(--grey-bg);
+    transition: background-color 0.2s ease-in-out, border-colour 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.module-container:hover {
+    background-color: var(--background);
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.completion {
+    margin-left: auto;
+}

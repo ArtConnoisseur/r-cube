@@ -15,11 +15,11 @@
 .sponsor-logo {
     height: 5rem;
     aspect-ratio: 1;
-    background-color: rgba(226, 233, 243, 0.343);
+    background-color: var(--grey-bg);
     padding: 3rem;
-    color: rgb(110, 124, 136);
+    color: var(--grey-font);
     border-radius: 30px;
-    border: 1px dashed rgb(110, 124, 136);
+    border: 1px dashed var(--grey-font);
     transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
 }
 

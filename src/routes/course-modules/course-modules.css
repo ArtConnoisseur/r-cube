@@ -1,0 +1,22 @@
+.course-modules-container {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    align-items: center;
+    gap: 3rem;
+}
+
+.modules-container, .course-modules-intro {
+    display: flex;
+    flex-direction: column;
+    width: min(100%, 80ch);
+    gap: 2rem;
+}
+
+.course-modules-intro {
+    background-color: var(--accent);
+    padding: 2rem 4rem;
+    color: white;
+    box-sizing: border-box;
+    border-radius: 30px;
+}

@@ -1,63 +1,72 @@
 import './sign-in.css';
 import { Input } from '../../components/Input/input';
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import { ImageText } from '../../components/ImageText/imageText';
+import { useForm } from 'react-hook-form';
+import { BackButton } from '../../components/BackButton/back-button';
+
+function validateEmail(value) {
+    const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    return regex.test(value) || 'The email is invalid';
+}
+
+function validatePassword(value) {
+    if (value.length < 8) {
+        return 'Password should be 8 characters long at least';
+    }
+}
+
 
 
 export function SignIn() {
-    const [ emailError, setEmailError ] = useState('');
-    const [ passwordError, setPasswordError ] = useState('');
+    const {register, formState, handleSubmit} = useForm();
+    const { errors } = formState;
 
-    let email;
-    let password;
-
-    function handleOnBlurEmail(event) {
-        event.preventDefault();
-
-        const regex = /([-!#-'*+/-9=?A-Z^-~]+(\.[-!#-'*+/-9=?A-Z^-~]+)*|"([]!#-[^-~ \t]|(\\[\t -~]))+")@([0-9A-Za-z]([0-9A-Za-z-]{0,61}[0-9A-Za-z])?(\.[0-9A-Za-z]([0-9A-Za-z-]{0,61}[0-9A-Za-z])?)*|\[((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[1-9]?[0-9])(\.(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[1-9]?[0-9])){3}|IPv6:((((0|[1-9A-Fa-f][0-9A-Fa-f]{0,3}):){6}|::((0|[1-9A-Fa-f][0-9A-Fa-f]{0,3}):){5}|[0-9A-Fa-f]{0,4}::((0|[1-9A-Fa-f][0-9A-Fa-f]{0,3}):){4}|(((0|[1-9A-Fa-f][0-9A-Fa-f]{0,3}):)?(0|[1-9A-Fa-f][0-9A-Fa-f]{0,3}))?::((0|[1-9A-Fa-f][0-9A-Fa-f]{0,3}):){3}|(((0|[1-9A-Fa-f][0-9A-Fa-f]{0,3}):){0,2}(0|[1-9A-Fa-f][0-9A-Fa-f]{0,3}))?::((0|[1-9A-Fa-f][0-9A-Fa-f]{0,3}):){2}|(((0|[1-9A-Fa-f][0-9A-Fa-f]{0,3}):){0,3}(0|[1-9A-Fa-f][0-9A-Fa-f]{0,3}))?::(0|[1-9A-Fa-f][0-9A-Fa-f]{0,3}):|(((0|[1-9A-Fa-f][0-9A-Fa-f]{0,3}):){0,4}(0|[1-9A-Fa-f][0-9A-Fa-f]{0,3}))?::)((0|[1-9A-Fa-f][0-9A-Fa-f]{0,3}):(0|[1-9A-Fa-f][0-9A-Fa-f]{0,3})|(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[1-9]?[0-9])(\.(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[1-9]?[0-9])){3})|(((0|[1-9A-Fa-f][0-9A-Fa-f]{0,3}):){0,5}(0|[1-9A-Fa-f][0-9A-Fa-f]{0,3}))?::(0|[1-9A-Fa-f][0-9A-Fa-f]{0,3})|(((0|[1-9A-Fa-f][0-9A-Fa-f]{0,3}):){0,6}(0|[1-9A-Fa-f][0-9A-Fa-f]{0,3}))?::)|(?!IPv6:)[0-9A-Za-z-]*[0-9A-Za-z]:[!-Z^-~]+)])/;
-
-        if (!(event.target.value)) {
-            setEmailError('Please enter an emai!');
-        } else if(!regex.test(event.target.value)) {
-            setEmailError('Enter a valid email!');
-        } else {
-            email = event.target.value;
-            setEmailError('');
-        }
-    }
-
-    function handleOnBlurPassword(event) {
-        event.preventDefault();
-
-        const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+])[A-Za-z\d!@#$%^&*()_+]{8,}$/;
-
-        if (!(event.target.value)) {
-            setPasswordError('You HAVE to enter a password!')
-        } else if(event.target.value.length < 8) {
-            setPasswordError('Password should be at least 8 characters long!');
-        } else {
-            password = event.target.value;
-            setPasswordError('');
-        }
-    }
-
-    const handleOnSubmit = (event) => {
-        event.preventDefault(); 
-
-        console.log(email, password)
-    }
+    const onFormSubmit = (data) => {
+        console.log(data);
+    };
 
     return (
-        <div id="sign-up-container">
-            <form onSubmit={(event) => {handleOnSubmit(event)}}>
+        <div id="sign-in-container">
+            <BackButton />
+            <form onSubmit={handleSubmit(onFormSubmit)} noValidate>
                 <h4>
                     Sign in and pick up where you left off!
                 </h4>
-                <Input fieldname='Email' displayFN={true} type="input" placeholder='username@example.com' onBlur={(e) => {handleOnBlurEmail(e)}} error={emailError} />
-                <Input fieldname='Password' displayFN={true} type="password" placeholder='Should contain @/#/$ etc.' onBlur={(e) => {handleOnBlurPassword(e)}} error={passwordError} />
+                <Input 
+                    fieldname={'Email'}
+                    placeholder={'username@example.com'}
+                    type={'email'}
+                    displayFN={true}
+                    error={errors.email?.message}
+                    registerInput={{...register('email', 
+                    {
+                        required: 'This feild is required!',
+                        validate: (value) => validateEmail(value)
+                    }
+                    )}}
+                />
+                <Input 
+                    fieldname={'Password'}
+                    placeholder={'Should contain @/&/$ etc.'}
+                    type={'password'}
+                    displayFN={true}
+                    error={errors.password?.message}
+                    registerInput={{...register('password', {
+                        required: 'This feild is required!',
+                        validate: (value) => validatePassword(value)
+                    }
+                    )}}
+                />
                 <button type="submit" >Sign In!</button>
                 <Link to='/sign-up'>Don{'\''}t have an account? Sign Up!</Link>
             </form>
+            <span className='vertical'>sign in and resume your studies!</span>
+            <ImageText 
+            className='sign-up-hero'
+            topText='Here are some plants.'
+            lowerText='Why? Everyone likes plants.'
+            imageAddress='https://plus.unsplash.com/premium_photo-1680082510819-cace32f84aeb?q=80&w=2500&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'/>
         </div>
     )
 }

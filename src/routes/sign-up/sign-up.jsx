@@ -1,102 +1,118 @@
 import './sign-up.css';
-import { Input } from '../../components/Input/input';
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import { useForm } from 'react-hook-form';
+import { Input } from '../../components/Input/input';
+import { ImageText } from '../../components/ImageText/imageText';
+import { BackButton } from '../../components/BackButton/back-button';
 
-function Scenery() {
-    return (
-        <svg width="2229" height="448" viewBox="0 0 2229 448" fill="none" xmlns="http://www.w3.org/2000/svg" id='sup-scenery'>
-            <path d="M525.223 123.733C426.978 122.137 181.276 47.2459 70.7062 10L36 294L2123.71 283.358C2141.28 217.069 2165.89 80.9002 2123.71 66.534C2070.98 48.5761 1671.19 145.682 1609.79 145.682C1548.39 145.682 1027.01 43.9204 923.01 43.9204C653.369 43.9204 648.03 125.728 525.223 123.733Z" fill="#7ABF8D"/>
-            <path d="M499.774 22.6267C401.554 21.0265 121.218 132.637 10.6761 95.3002L0 448L2215.95 355.325C2233.52 288.874 2238.77 204.377 2196.6 189.976C2143.89 171.974 1804.92 -12.0433 1453.95 0.624609C1163.88 11.0941 972.19 157.973 868.766 168.64C765.341 179.308 622.549 24.6269 499.774 22.6267Z" fill="#97D534"/>
-        </svg>
-    )
+let passwordValue = '-1';
+
+function onFormSubmit(data) {
+    console.log(data);
 }
 
+function validateEmail(value) {
+    const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    return regex.test(value) || 'The email is invalid';
+}
+
+function validateFullName(value) {
+    const regex = /^[a-zA-Z]+ [a-zA-Z]+$/;
+    return regex.test(value) || 'Name should have space between first and last name';
+}
+
+function validatePassword(value) {
+    passwordValue = value;
+
+    if (value.length < 8) {
+        return 'Password should be 8 characters long at least';
+    }
+
+    const regex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/;
+    return regex.test(value) || 'Use Special Characters!';
+}
+
+function validateConfirmPassword(value) {
+    if (passwordValue === '-1') 
+        return 'Please enter password first!';
+    else
+        return value === passwordValue || 'The passwords do not match!';
+}
+
+
 export function SignUp() {
-    let passwordValue = ''; 
+    const {register, formState, handleSubmit} = useForm();
+    const { errors } = formState;
 
-    const [ nameError, setnNameError ] = useState('');
-    const [ emailError, setEmailError ] = useState('');
-    const [ passwordError, setPasswordError ] = useState('');
-    const [ confirmError, setConfirmError ] = useState('');
-    
-    function handleOnBlurName(event) {
-        event.preventDefault();
-
-        if (!(event.target.value)) {
-            setnNameError('Please enter a name!');
-        } else if (!(event.target.value.trim().includes(' '))) {
-            setnNameError('Please put a space between your first and last name!')
-        } else setnNameError('');
-    }
-
-    function handleOnBlurEmail(event) {
-        event.preventDefault();
-
-        const regex = /([A-Za-z0-9])*@([A-Za-z0-9])*.(com|in|net)/gm;
-
-        if (!(event.target.value)) {
-            setEmailError('Please enter an emai!');
-        } else if(!regex.test(event.target.value)) {
-            setEmailError('Enter a valid email!');
-        } else {
-            setEmailError('');
-        }
-    }
-
-    function handleOnBlurPassword(event) {
-        event.preventDefault();
-
-        if (!(event.target.value)) {
-            setPasswordError('You HAVE to enter a password!')
-        } else if(event.target.value.length < 8) {
-            setPasswordError('Password should be at least 8 characters long!');
-        } else {
-            passwordValue = event.target.value;
-            setPasswordError('');
-        }
-    }
-
-    function handleOnBlurConfirm(event) {
-        event.preventDefault();
-
-        if (!(event.target.value)) {
-            setConfirmError('Please confirm the password!');
-        } else if (passwordError) {
-            setConfirmError('You have to fix the issues with original password!');
-        } else if (event.target.value.trim() != passwordValue.trim()) {
-            setConfirmError('Them passwords don\'t match!');
-        } else {
-            setConfirmError('');
-        }
-    }
-
-    function handleOnSubmit(event) {
-        event.preventDefault();
-
-        const form = event.target;
-
-        for (let child of form.children) {
-            if (child.type === 'fieldset') {
-                child.children[1].blur();
-            }
-        }
-    }
+    const onFormSubmit = (data) => {
+        console.log(data);
+    };
 
     return (
         <div id="sign-up-container">
-            <form onSubmit={(event) => handleOnSubmit(event)}>
-                <h4>
-                    Sign up and start learning today!
-                </h4>
-                <Input fieldname='Full Name' displayFN={true} type="email" placeholder="John Doe | Careful, this will be isplayed on your certificate" onBlur={(e) => {handleOnBlurName(e)}} error={nameError}/>
-                <Input fieldname='Email' displayFN={true} type="input" placeholder='username@example.com' onBlur={(e) => {handleOnBlurEmail(e)}} error={emailError} />
-                <Input fieldname='Password' displayFN={true} type="password" placeholder='Should contain @/#/$ etc.' onBlur={(e) => {handleOnBlurPassword(e)}} error={passwordError} />
-                <Input fieldname='Confirm Password' displayFN={true} type="password" onBlur={(e) => {handleOnBlurConfirm(e)}} error={confirmError} />
-                <button type="submit" >Sign Up!</button>
-                <Link>Already have an account? Sign In!</Link>
+            <BackButton />
+            <form onSubmit={handleSubmit(onFormSubmit)} noValidate>
+                <h4>Sign up and start learning today!</h4>
+                <Input 
+                    fieldname={'Full Name'}
+                    placeholder={'John Doe | Should contain at least one space'}
+                    type={'email'}
+                    displayFN={true}
+                    error={errors.fullName?.message}
+                    registerInput={{...register('fullName',
+                        {
+                            required: 'This feild is required!',
+                            validate: (value) => validateFullName(value),
+                        }
+                    )}}
+                />
+                <Input 
+                    fieldname={'Email'}
+                    placeholder={'username@example.com'}
+                    type={'email'}
+                    displayFN={true}
+                    error={errors.email?.message}
+                    registerInput={{...register('email', 
+                    {
+                        required: 'This feild is required!',
+                        validate: (value) => validateEmail(value)
+                    }
+                    )}}
+                />
+                <Input 
+                    fieldname={'Password'}
+                    placeholder={'Should contain @/&/$ etc.'}
+                    type={'password'}
+                    displayFN={true}
+                    error={errors.password?.message}
+                    registerInput={{...register('password', {
+                        required: 'This feild is required!',
+                        validate: (value) => validatePassword(value)
+                    }
+                    )}}
+                />
+                <Input 
+                    fieldname={'Confirm Password'}
+                    placeholder={'Enter the same passwords as above'}
+                    type={'password'}
+                    displayFN={true}
+                    error={errors.confirmPassword?.message}
+                    registerInput={{...register('confirmPassword', {
+                        required: 'This feild is required!',
+                        validate: (value) => validateConfirmPassword(value)
+                    }
+                    )}}
+                />
+                <button type="submit">Sign Up!</button>
+                <Link to="/sign-in">Already have an account? Sign In!</Link>
             </form>
-            <Scenery />
+            <span className="vertical">We welcome you to R - Cube</span>
+            <ImageText
+                className="sign-up-hero"
+                topText="Here are some plants."
+                lowerText="Why? Everyone likes plants."
+                imageAddress="https://plus.unsplash.com/premium_photo-1680082510819-cace32f84aeb?q=80&w=2500&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            />
         </div>
-    )
+    );
 }

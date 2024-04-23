@@ -11,10 +11,13 @@
     flex-direction: column;
     gap: 1.4rem;
     align-items: center;
-    border: 1px solid var(--text);
-    padding: 5rem 8rem;
     border-radius: 3rem;
     background-color: white;
+    align-items: center;
+    justify-content: center;
+    width: 35%;
+    min-height: 70%;
+    border: 1px solid var(--text);
 }
 
 #sign-up-container form button {
@@ -22,9 +25,9 @@
     margin-top: 2rem;
 }
 
-#sup-scenery {
-    position: absolute;
-    bottom: -5rem;
-    opacity: 0.8;
-    z-index: -1;
+.sign-up-hero {
+    height: 70%;
+    width: 35%;
+    border-radius: 50px;
 }
+

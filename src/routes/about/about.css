@@ -87,7 +87,7 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    background-color: white;
+    background-color: var(--background);
 }
 
 .vector-bg {

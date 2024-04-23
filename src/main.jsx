@@ -10,9 +10,10 @@ import { Root } from './routes/root';
 import { ErrorPage } from './routes/error-page/error-page'
 import { SignUp } from "./routes/sign-up/sign-up";
 import { SignIn } from './routes/sign-in/sign-in';
-import { Experimentation } from './routes/experimentation/experimentation.jsx';
 import { About } from "./routes/about/about.jsx";
 import { CourseModules } from "./routes/course-modules/course-modules.jsx";
+import { Module } from "./routes/module/module.jsx";
+import { Quiz } from './routes/quiz/quiz.jsx'
 
 import "./index.css";
 
@@ -33,11 +34,6 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />
   },
   {
-    path: '/experimentation',
-    element: <Experimentation />,
-    errorElement: <ErrorPage />
-  },
-  {
     path: '/about',
     element: <About />,
     errorElement: <ErrorPage />
@@ -45,6 +41,17 @@ const router = createBrowserRouter([
   {
     path: '/course-modules',
     element: <CourseModules />,
+    errorElement: <ErrorPage />
+  }, 
+  {
+    path: '/module/:moduleNo',
+    element: <Module />,
+    errorElement: <ErrorPage />,
+    loader: ({params}) => params.moduleNo
+  },
+  {
+    path: '/quiz',
+    element: <Quiz />,
     errorElement: <ErrorPage />
   }
 ]);

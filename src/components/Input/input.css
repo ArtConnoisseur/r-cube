@@ -48,3 +48,9 @@
     font-size: 0.8rem;
 }
 
+.view-password {
+    position: absolute;
+    bottom: 1.1rem;
+    right: 1.5rem;
+    cursor: pointer;
+}

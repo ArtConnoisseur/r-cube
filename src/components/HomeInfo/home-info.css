@@ -1,0 +1,19 @@
+.home-info-container {
+    display: flex;
+    gap: 4rem;
+    background-color: var(--grey-bg);
+    padding: 4rem;
+    border-radius: 30px;
+    width: 80%;
+}
+
+.home-info-image {
+    height: 400px;
+    width: 400px;
+    display: flex;
+}
+
+.home-info-button {
+    margin-top: auto;
+    display: none;
+}

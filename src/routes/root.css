@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 4rem;
 }
 
 #root {
@@ -37,15 +38,15 @@
   }
 
   24% {
-    content: "R"
+    content: "Re"
   }
 
   28% {
-    content: ""
+    content: "Re"
   }
 
   32% {
-    content: "R";
+    content: "Re";
   }
 
   36% {
@@ -77,15 +78,15 @@
   }
 
   64% {
-    content: "R";
+    content: "Re";
   }
 
   68% {
-    content: "";
+    content: "Re";
   }
 
   72% {
-    content: "R";
+    content: "Re";
   }
 
   76% {
@@ -170,12 +171,12 @@
 }
 
 .final-cta button {
-  background-color: white;
+  background-color: var(--background);
   color: var(--text);
 }
 
 .final-cta button:hover {
-  background-color: white;
+  background-color: var(--background);
   color: var(--accent);
 }
 

@@ -1,32 +1,26 @@
-#sign-up-container {
+#sign-in-container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     overflow: hidden;
-    background-image: url('https://i.pinimg.com/564x/2d/7f/18/2d7f18bbbc88e67f1d140498d4a0863b.jpg');
 }
 
-#sign-up-container form {
+#sign-in-container form {
     display: flex;
     flex-direction: column;
     gap: 1.4rem;
     align-items: center;
-    border: 1px solid var(--text);
-    padding: 5rem 8rem;
     border-radius: 3rem;
-    background-color: rgba(255, 255, 255, 0.657);
-    backdrop-filter: blur(30px);
+    background-color: white;
+    align-items: center;
+    justify-content: center;
+    width: 35%;
+    min-height: 70%;
+    border: 1px solid var(--text);
 }
 
 #sign-up-container form button {
     width: 40%;
     margin-top: 2rem;
-}
-
-#sup-scenery {
-    position: absolute;
-    bottom: -5rem;
-    opacity: 0.8;
-    z-index: -1;
 }

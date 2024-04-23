@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './footer.css';
 
 export function Footer() {
@@ -29,6 +30,13 @@ export function Footer() {
                     <a><li>Nihal Pinto</li></a>
                     <a><li>Nikhil Pinto</li></a>
                     <a><li>Rudraksh Srivastava</li></a>
+                </ul>
+            </div>
+            <div>
+                <h5>Sign Up Liks</h5>
+                <ul className='footer-list'>
+                    <Link to='/sign-up'><li>Sign Up</li></Link>
+                    <Link to='/sign-in'><li>Sign In</li></Link>
                 </ul>
             </div>
             <div className='copyright'>
