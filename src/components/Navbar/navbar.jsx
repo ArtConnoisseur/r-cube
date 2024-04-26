@@ -10,8 +10,9 @@ export function Navbar() {
             <ul>
                 <div className="general-links">
                     <Link to="/"><li className='links'>Home</li></Link>
-                    <a href="/about"><li className='links'>About</li></a>
-                    <a href="/course-modules"><li className='links'>Course Modules</li></a>
+                    <Link to="/about"><li className='links'>About</li></Link>
+                    <Link to="/course-modules"><li className='links'>Course Modules</li></Link>
+                    <Link to='/feedback'><li className='links'>Feedback</li></Link>
                 </div>
                 <div className='sign-up-links'>
                     <Link to="/sign-up"><li className='links'>Sign Up</li></Link>

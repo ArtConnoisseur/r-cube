@@ -16,7 +16,7 @@ export function Input({ fieldname, type, displayFN, placeholder, error, register
     const [assignedType, setType ] = useState(type);
 
     return (
-        <fieldset id="input-container">
+        <fieldset id="input-container" data-type={type}>
             {displayFN ? <legend><small>{fieldname}</small></legend> : ''}
             <input type={ assignedType } placeholder={ placeholder || fieldname } {...registerInput}></input>
             <span id="input-error-message">{error}</span>

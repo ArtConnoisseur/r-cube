@@ -1,0 +1,25 @@
+.feedback-form {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+}
+
+.feedback-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+    align-items: center;
+    border-radius: 3rem;
+    background-color: white;
+    align-items: center;
+    justify-content: center;
+    width: 35%;
+    min-height: 73%;
+    border: 1px solid var(--text);
+    padding: 2rem;
+    text-align: center;
+    box-sizing: border-box;
+}

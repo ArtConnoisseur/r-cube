@@ -53,6 +53,11 @@ export function Root() {
             infoPara={'Learn the basics of how to sort and segregate waste materials efficiently.'}
             learnLink={'/waste-sorting-techniques'}
           />
+          <div id='sponsors'>
+                <h2>Thanks to our amazing sponsors!</h2>
+                <SponsorMarquee />
+                They've been the backbone of our operation. We are very grateful to them!
+          </div>
           <Footer />
       </div>
   );

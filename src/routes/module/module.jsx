@@ -301,6 +301,7 @@ export function Module() {
                 <div className='module-header'>
                     <h2>Module {moduleNo}: {moduleNames[moduleNo - 1]}</h2>
                     <hr />
+                    This is module {moduleNo} of our course. We hope you are learning well so far!
                 </div>
                 <h3>Here is the video for this topic:</h3>
                {wasteSegregationVideos[moduleNo - 1]}

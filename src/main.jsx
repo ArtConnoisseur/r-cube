@@ -13,7 +13,8 @@ import { SignIn } from './routes/sign-in/sign-in';
 import { About } from "./routes/about/about.jsx";
 import { CourseModules } from "./routes/course-modules/course-modules.jsx";
 import { Module } from "./routes/module/module.jsx";
-import { Quiz } from './routes/quiz/quiz.jsx'
+import { Quiz } from './routes/quiz/quiz.jsx';
+import { Feedback } from "./routes/feedback/feedback.jsx";
 
 import "./index.css";
 
@@ -52,6 +53,11 @@ const router = createBrowserRouter([
   {
     path: '/quiz',
     element: <Quiz />,
+    errorElement: <ErrorPage />
+  },
+  {
+    path: '/feedback',
+    element: <Feedback />,
     errorElement: <ErrorPage />
   }
 ]);
